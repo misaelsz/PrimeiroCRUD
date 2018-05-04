@@ -1,0 +1,137 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="ajax.js"></script>
+    <script src="listar.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="editar.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Lista</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="cadastro.html">cadastro</a>
+                </li>
+
+            </ul>
+            <input class="form-control mr-sm-2" type="search" id="pesquisa" placeholder="pesquisa por id" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" onclick="getPorNome(document.getElementById('pesquisa').value, listarPorNome);">Pesquisar</button>
+
+        </div>
+    </nav>
+
+    <button onclick="get(listar);">Listar</button>
+
+    <table class="table" id="listaPessoas">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Escolaridade</th>
+                <th scope="col">Sexo</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+            </div>
+
+            <div class="container">
+                <label>
+                    <b>Nome</b>
+                </label>
+                <input id="txtNome" type="text" placeholder="Digite seu nome" name="nome" required>
+
+                <label>
+                    <b>Email</b>
+                </label>
+                <input id="txtEmail" type="text" placeholder="Digite seu email" name="email" required>
+
+                <label>
+                    <b>Telefone</b>
+                </label>
+                <input id="txtTelefone" type="text" placeholder="Digite seu telefone" name="telefone" required>
+
+                <button type="button" id="enviar">editar</button>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <div id='confirm' class="exclusao">
+
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('confirm').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+
+            <p style="text-align:center">Tem certeza que quer realmente excluir?</p>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" id="btnConfirm" value="sim" class="btn btn-primary">Sim</button>
+                <button type="button" onclick="document.getElementById('confirm').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="Pessoa"></div>
+    <table id="dadosPessoais">
+
+    </table>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('confirm');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

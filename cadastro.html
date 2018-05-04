@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="carregamentoDaPaginaCadastrar.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Aula Ajax Lista</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="cadastro.html">cadastro</a>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" id="pesquisa" placeholder="pesquisa por id" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" onclick="listaId();">Pesquisar</button>
+            </form>
+        </div>
+    </nav>
+
+    <form method="POST" id="formCad">
+        <div class="form-group">
+            <label for="cadNome">Nome</label>
+            <input type="text" value="" class="form-control" id="cadNome" aria-describedby="emailHelp" placeholder="Digite seu nome">
+        </div>
+        <div class="form-group">
+            <label for="cadEmail">E-mail</label>
+            <input type="text" value="" class="form-control" id="cadEmail" placeholder="Digite seu e-mail">
+        </div>
+        <div class="form-group">
+            <label for="cadTelefone">Telefone</label>
+            <input type="text" value="" class="form-control" id="cadTelefone" placeholder="Digite seu telefone">
+        </div>
+        <div class="container">
+            <h4 class="page-header">Escolaridade</h4>
+            <div class="row">
+                <div class="col-sm-3">
+                    <select class="form-control" id="Escolaridade">
+                        <option name="valor" value="fundamental">Fundamental</option>
+                        <option name="valor" value="medio">Medio</option>
+                        <option name="valor" value="superior">Superior</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input name="valor" type="radio" id="valorM" value="M" checked>
+            <label for="valor">Masculino</label>
+        </div>
+
+        <div class="form-group">
+            <input name="valor" type="radio" id="valorF" value="F">
+            <label for="valor">Feminino</label>
+        </div>
+
+        <button class="btn btn-primary" id="btnCadastrar" type="button">Cadastrar</button>
+    </form>
+    <div id="div1"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
